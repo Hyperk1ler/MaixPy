@@ -4,15 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea8c6581-6556-4ec2-bd7d-8b4202d46446" name="更改" comment="test">
-      <change afterPath="$PROJECT_DIR$/OpenCV.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Opencv+MaixCam/MaixPy.md" beforeDir="false" afterPath="$PROJECT_DIR$/MaixPy.md" afterDir="false" />
+    <list default="true" id="ea8c6581-6556-4ec2-bd7d-8b4202d46446" name="更改" comment="Day 1,主要是基本模块的使用，感觉意义不大">
+      <change afterPath="$PROJECT_DIR$/Code/Copy.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Code/OpenCV_learn1.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Code/cat.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Code/lena_img.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OpenCV_File/ImageProcessing_1/bgr2yuv_practice.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OpenCV_File/ImageProcessing_1/cvtColor_practice.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OpenCV_File/ImageProcessing_1/durant.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OpenCV_File/ImageProcessing_1/irving.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OpenCV_File/ImageProcessing_1/readvideo_practice.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OpenCV_File/ImageProcessing_1/resize_practice.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/MaixPy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MaixPy.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -34,12 +51,20 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Python.OpenCV_learn1.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
-    "settings.editor.selected.configurable": "vcs.Git"
+    "last_opened_file_path": "C:/Users/Jamuq/AppData/Local/Packages/PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0/LocalCache/local-packages/Python312/Scripts",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Programing_Study\CV_learn\MaixPy\Code" />
+      <recent name="D:\Programing_Study\CV_learn\MaixPy" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -64,7 +89,15 @@
       <option name="project" value="LOCAL" />
       <updated>1736954672881</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Day 1,主要是基本模块的使用，感觉意义不大">
+      <option name="closed" value="true" />
+      <created>1737033680042</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1737033680042</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -72,7 +105,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -81,6 +126,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="test" />
-    <option name="LAST_COMMIT_MESSAGE" value="test" />
+    <MESSAGE value="Day 1,主要是基本模块的使用，感觉意义不大" />
+    <option name="LAST_COMMIT_MESSAGE" value="Day 1,主要是基本模块的使用，感觉意义不大" />
   </component>
 </project>
