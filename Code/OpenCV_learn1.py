@@ -38,7 +38,7 @@ while True:
     ret, frame = cap.read()
     # 返回一个布尔值和一个图像矩阵
     # 可以通过判断布尔值的方式判定视频是否结束
-    b, g, r,= cv2.split(frame)
+    b, g, r= cv2.split(frame)
     #.split()方法可以将图像按b,g,r三个通道分离
     #也可以直接通过numpy引索的方式进行分离（一般来说会用这个，因为split()比较耗时）
     cv2.imshow("Blue", b)
