@@ -4,18 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea8c6581-6556-4ec2-bd7d-8b4202d46446" name="更改" comment="Day 2，OpenCV 对于图像，视频的基本操作，调用USB摄像头">
-      <change afterPath="$PROJECT_DIR$/Code/OpenCV_learn2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OpenCV_File/ImageProcessing_2/add_practice.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OpenCV_File/ImageProcessing_2/boundaryfill_practice.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OpenCV_File/ImageProcessing_2/irving.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OpenCV_File/ImageProcessing_2/lena.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OpenCV_File/ImageProcessing_2/logomask_practice.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OpenCV_File/ImageProcessing_2/mask_practice.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OpenCV_File/ImageProcessing_2/opencv_logo_white.jpg" afterDir="false" />
+    <list default="true" id="ea8c6581-6556-4ec2-bd7d-8b4202d46446" name="更改" comment="Day 3，OpenCV 的数值计算，按位运算，遮罩（掩膜mask）">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/OpenCV_learn1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Code/OpenCV_learn1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpenCV.md" beforeDir="false" afterPath="$PROJECT_DIR$/OpenCV.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/OpenCV_learn2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Code/OpenCV_learn2.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +23,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Hyperk1ler&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Hyperk1ler/MaixPy.git&quot;,
+    &quot;accountId&quot;: &quot;09f48ca3-09c0-4160-8e4c-5d95f55b1809&quot;
+  }
+}</component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -53,9 +56,12 @@
     "Python.OpenCV_learn2.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/Jamuq/AppData/Local/Packages/PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0/LocalCache/local-packages/Python312/Scripts",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+    "last_opened_file_path": "D:/Programing_Study/CV_learn/MaixPy",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -67,7 +73,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-c69650fc56ca-d3b881c8e49f-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-233.15619.17" />
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-PY-243.22562.220" />
+        <option value="bundled-python-sdk-0fc6c617c4bd-9a18a617cbe4-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-243.22562.220" />
       </set>
     </attachedChunks>
   </component>
@@ -79,6 +86,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1736951864313</updated>
+      <workItem from="1737218900074" duration="8000" />
+      <workItem from="1737218924848" duration="242000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <option name="closed" value="true" />
@@ -104,8 +113,19 @@
       <option name="project" value="LOCAL" />
       <updated>1737123586532</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Day 3，OpenCV 的数值计算，按位运算，遮罩（掩膜mask）">
+      <option name="closed" value="true" />
+      <created>1737210625280</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1737210625280</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -135,6 +155,7 @@
     <MESSAGE value="test" />
     <MESSAGE value="Day 1,主要是基本模块的使用，感觉意义不大" />
     <MESSAGE value="Day 2，OpenCV 对于图像，视频的基本操作，调用USB摄像头" />
-    <option name="LAST_COMMIT_MESSAGE" value="Day 2，OpenCV 对于图像，视频的基本操作，调用USB摄像头" />
+    <MESSAGE value="Day 3，OpenCV 的数值计算，按位运算，遮罩（掩膜mask）" />
+    <option name="LAST_COMMIT_MESSAGE" value="Day 3，OpenCV 的数值计算，按位运算，遮罩（掩膜mask）" />
   </component>
 </project>
