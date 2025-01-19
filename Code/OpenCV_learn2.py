@@ -6,6 +6,8 @@ image = cv2.imread('cat.jpg')
 image_add = image + 10                  #此即numpy库的加法
 image_add2 = cv2.add(image,image_add)   #此即opencv的add()函数
                                         #即 运算结果大于255，取255
+img_photo = cv2.imread('james.jpg')
+
 print(image[0:4, :, 0])
 print(image_add[0:4, :, 0])
 print(image_add2[0:4, :, 0])
@@ -23,7 +25,11 @@ all_test = np.column_stack((img, img_test, img_test1))
 
 cv2.imshow('img, img_test, img_test1',all_test)
 
-img_photo = cv2.imread('james.jpg')
+rec = np.vstack((img, img_test, img_test1))
+cv2.imshow('rec',rec)
+
+
+'''
 img_logo = cv2.imread('logo1.jpg')
 
 print(img_logo.shape, img_photo.shape)
@@ -57,6 +63,7 @@ cv2.imshow("img_photo_bg_mask", img_photo_bg_mask)
 cv2.imshow("img2_photo_fg_mask", img2_photo_fg_mask)
 cv2.imshow("img_photo", img_photo)
 cv2.imshow("midian", midian_logo)
+'''
 
 cv2.waitKey(0)
 cv2.destroyAllWindows()

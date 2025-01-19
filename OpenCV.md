@@ -93,3 +93,33 @@ cv2.bitwise_xor()		#按位 异或
 ![image-20250118222603540](C:\Users\Jamuq\AppData\Roaming\Typora\typora-user-images\image-20250118222603540.png)
 
 可以看到 原始数据 按位与 遮罩后 遮罩上0对应的区域被取零，而1对应的区域不变，这就做到了对0所在区域的忽略
+
+边界填充
+
+对于图像的卷积操作，最边缘的像素一般无法处理，所以卷积核中心倒不了最边缘像素。这就需要先将图像的边界填充，再根据不同的填充算法进行卷积操作，得到的新图像就是填充后的图像。
+
+```py
+cv2.copyMakeBorder(src, top, bottom, left, left, borderType, dst = None, value = None)
+# 在图像周围创建一个边
+# src = 输入图像
+# top, bottom, left, right 对应边界的像素数目
+# borderType = 添加边界的类型，类型如下
+# .BORDER_CONSTANT 添加有颜色的常数值边界，需要参数value
+# .BORDER_REFLECT 例 fedcba|abcdefgh|hgfedcb
+# .BORDER_REFLECT_101 / .BORDER_DEFAULT 例 gfedcb|abcdefgh|gfedcba
+# .BORDER_REPLICATE 例 aaaaaa|abcdefgh|hhhhhhh
+# .BORDER_WRAP 例 cdefgh|abcdefgh|abcdefg
+```
+
+为了对比各种方法得出的图像的区别 可使用 numpy 库中.vstack()方法或.hstack()方法
+
+也可使用上面用到过的.column_stack()方法，三种方法都有一个共同条件
+
+即 合成的图像大小必须一致，否则会报错
+
+二值化处理
+
+即设阈值 大于阈值的为0（黑色）或255（白色）使图像成为黑白图
+
+阈值可固定，也可自适应阈值
+
