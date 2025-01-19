@@ -121,5 +121,84 @@ cv2.copyMakeBorder(src, top, bottom, left, left, borderType, dst = None, value =
 
 即设阈值 大于阈值的为0（黑色）或255（白色）使图像成为黑白图
 
-阈值可固定，也可自适应阈值
+阈值可固定，也可自适应阈值，常用的二值化算法即如下图
+
+![image-20250119213505139](C:\Users\Jamuq\AppData\Roaming\Typora\typora-user-images\image-20250119213505139.png)
+
+通过设定一个阈值T，使高于阈值的部分成为白色，低于阈值的部分成为黑色
+
+而阈值，也分为全局阈值或局部阈值
+
+OpenCV中一个简单的全局阈值处理即.threshold()方法
+
+```py
+cv2.threshold(src, thresh, maxval, type, dst = None)
+
+# src = 原图像
+# thresh = 阈值
+# maxval = 当像素值高于（或小于）阈值时应被赋予的新的像素值
+# type = 阈值调整方法 具体类型如下
+# THRESH_BINARY			超过阈值部分 取最大值 否则取零 即下图的二进制阈值
+# THRESH_BINARY_INV		上述方法的翻转 即下图中反二进制阈值
+# THRESH_TRUNC			大于阈值部分设为阈值 否则不变 即下图中截断阈值
+# THRESH_TOZERO			大于阈值部分不变 否则设为零 即下图中阈值化为0
+# THRESH_TOZERO_INV		上述方法的翻转 即下图中反阈值化为0
+```
+
+![image-20250119214600086](C:\Users\Jamuq\AppData\Roaming\Typora\typora-user-images\image-20250119214600086.png)
+
+OpenCV中一个自适应阈值处理函数（局部阈值）为.adaptiveThreshold()方法
+
+```py
+cv2.adaptiveThreshold(src, macValue, adaptiveMethod, thresholdType, blockSize, C, dst = None)
+
+# src = 原图像 应为灰度图
+# maxValue = 当像素值高于（或小于）阈值时应被赋予的新像素值
+# adaptiveMethod 为 CV_ADAPTIVE_THRESH_MEAN_C 或 CV_ADAPTIVE_GAUSSIAN_C 中的一个
+# _MEAN_C 指邻近区域的均值 _GAUSSIAN_C 指邻近区域的加权和，权重为一个高斯窗口
+# thresholdType = 仅有 .THRESH_BINARY 和 .THRESH_BINARY_INV
+# blockSize = 规定区域大小（为一个正方形区域）
+# C= 为一个常数 对于_MEAN_C 方法 阈值则等于区域均值减去C 对于_GAUSSIAN_C 方法 阈值则等于加权值减去C
+```
+
+![在这里插入图片描述](https://i-blog.csdnimg.cn/blog_migrate/a3647d2ecfe25ba3a51f3739cb73fb3b.jpeg)
+
+![在这里插入图片描述](https://i-blog.csdnimg.cn/blog_migrate/e17f97b537a94323b0205b478e274db9.png)
+
+Otsu 二值化
+
+使用全局阈值时的阈值，几乎为一个随机值，需要不断尝试不同的值才能逐渐获得一个较优的阈值。
+
+如果在处理一副双峰图像时，应在两个峰间峰谷选一个值作为阈值
+
+而Otsu 二值化即 对一幅双峰图像自动根据直方图计算阈值（）用到的函数为.threshold() 但需多传入一个参数flag cv2.THRESH_OTSU
+
+```py
+import cv2
+
+img = cv2.imread('License-plate.jpg')
+gray_img = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
+
+# 设127 为全局阈值
+ret1,th1 = cv2.threshold(gray_img,127,255,cv2.THRESH_BINARY)
+
+# Otsu 滤波
+ret2,th2 = cv2.threshold(gray_img,0,255,cv2.THRESH_BINARY+cv2.THRESH_OTSU)
+print(ret2)
+
+# 先使用一个 5x5 的高斯核除去噪音，然后再使用 Otsu 二值化
+blur = cv2.GaussianBlur(gray_img,(5,5),0)	#做一个类似 降锐度 的操作
+ret3,th3 = cv2.threshold(blur,0,255,cv2.THRESH_BINARY+cv2.THRESH_OTSU)
+
+cv2.imshow("img",img)
+cv2.imshow("th1",th1)
+cv2.imshow("th2",th2)
+cv2.imshow("th3",th3)
+
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+```
+
+![image-20250119220833763](C:\Users\Jamuq\AppData\Roaming\Typora\typora-user-images\image-20250119220833763.png)
 

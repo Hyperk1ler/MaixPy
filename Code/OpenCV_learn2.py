@@ -14,7 +14,9 @@ print(image_add2[0:4, :, 0])
 
 img = cv2.imread('logo1.jpg')
 test = img
+im = cv2.threshold(image,155,255,cv2.THRESH_BINARY)[1]
 
+cv2.imshow('image',im)
 #opencv算法
 img_test = cv2.add(img,test)
 
@@ -64,6 +66,28 @@ cv2.imshow("img2_photo_fg_mask", img2_photo_fg_mask)
 cv2.imshow("img_photo", img_photo)
 cv2.imshow("midian", midian_logo)
 '''
+
+
+img = cv2.imread('License-plate.jpg')
+gray_img = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
+
+# 设127 为全局阈值
+ret1,th1 = cv2.threshold(gray_img,127,255,cv2.THRESH_BINARY)
+
+# Otsu 滤波
+ret2,th2 = cv2.threshold(gray_img,0,255,cv2.THRESH_BINARY+cv2.THRESH_OTSU)
+print(ret2)
+
+# 先使用一个 5x5 的高斯核除去噪音，然后再使用 Otsu 二值化
+blur = cv2.GaussianBlur(gray_img,(5,5),0)
+ret3,th3 = cv2.threshold(blur,0,255,cv2.THRESH_BINARY+cv2.THRESH_OTSU)
+
+cv2.imshow("iamg",gray_img)
+cv2.imshow("blur",blur)
+cv2.imshow("img",img)
+cv2.imshow("th1",th1)
+cv2.imshow("th2",th2)
+cv2.imshow("th3",th3)
 
 cv2.waitKey(0)
 cv2.destroyAllWindows()
