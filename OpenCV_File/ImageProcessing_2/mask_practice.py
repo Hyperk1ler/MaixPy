@@ -26,5 +26,5 @@ def mask_processing(path):
     cv2.destroyAllWindows()
  
 if __name__ == '__main__':
-    path = 'irving.jpg'
+    path = '../../Code/irving.jpg'
     mask_processing(path)

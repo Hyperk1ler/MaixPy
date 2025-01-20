@@ -4,7 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
   
 # 举一个极端的例子，真的只是运气好，遇到了。。。。
-img = cv2.imread('lena.jpg')
+img = cv2.imread('../../Code/lena.jpg')
 img_add = img + 10
 img_add2 = cv2.add(img, img_add)
  

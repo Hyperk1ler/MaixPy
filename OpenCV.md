@@ -202,3 +202,150 @@ cv2.destroyAllWindows()
 
 ![image-20250119220833763](C:\Users\Jamuq\AppData\Roaming\Typora\typora-user-images\image-20250119220833763.png)
 
+## 第三天
+
+### 图像灰度线性变换与非线性变换（对数变换，伽马变换）
+
+#### 图像灰度化
+
+即将彩色图像转化为灰度图像。彩色图像中每个像素颜色由RGB三个分量决定，每个分量可取值0~255
+
+则一个像素点0~255^3的取值范围。
+
+灰度图像是一种RGB三通道都相同的特殊彩色图像。一个像素点有0~255的取值范围
+
+灰度化的核心思想即为 R = G = B 这个相同的值叫灰度值
+
+一种常见常用的方法是 加权平均灰度处理 且具有一个比较符合的经验值
+
+通过人眼对红、绿、蓝三种颜色的敏感度 分别设置权值为 0.299、0.587、0.114
+
+即可得到较为合理的灰度图像
+
+#### OpenCV中灰度化
+
+直接灰度化，在读取图像时直接将其转化为灰度图
+
+```py
+import cv2
+
+img = cv2.imread(photo_file, cv2.IMREAD_GRAYSCALE)
+```
+
+先读取后转化为灰度图
+
+```py
+import cv2
+
+img = cv2.imread(photo_file)
+
+grey_img = cv2.cvtcolor(img, cv2.COLOR_BGR2GRAY)
+```
+
+PIL库中的Image模块
+
+```py
+import numpy as np
+form PIL import Image
+
+img2 = Image.open(photo_file)
+grey_img2 = img.convert('L')
+grey_img22 = np.array(grey_img2)
+print(type(grey_img22))
+```
+
+图像灰度化练习
+
+```py
+import cv2
+
+img = cv2.imread('lena.jpg')
+res = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+
+cv2.imshow('original', img)
+cv2.imshow('gray', res)
+
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+```
+
+#### 基于像素操作的图像灰度化
+
+最大值灰度处理
+
+灰度值即RGB三个分量中最大值，处理过后灰度图亮度很高
+
+```py
+import cv2 
+import numpy as np 
+ 
+#读取原始图像
+img = cv2.imread('irving.jpg')
+src = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+ 
+#获取图像高度和宽度
+height = img.shape[0]
+width = img.shape[1]
+ 
+#创建一幅图像
+grayimg = np.zeros((height, width, 3), np.uint8)
+ 
+#图像最大值灰度处理
+for i in range(height):
+    for j in range(width):
+        #获取图像R G B最大值
+        gray = max(img[i,j][0], img[i,j][1], img[i,j][2])
+        #灰度图像素赋值 gray=max(R,G,B)
+        grayimg[i,j] = np.uint8(gray)
+ 
+cv2.imshow("src", img)
+cv2.imshow("gray", grayimg)
+ 
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+```
+
+平均灰度处理
+
+灰度值等于三个分量灰度值的求和平均，处理过后图像比较柔和
+
+```py
+import cv2 
+import numpy as np 
+import matplotlib.pyplot as plt
+ 
+#读取原始图像
+img = cv2.imread('irving.jpg')
+ 
+src = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+ 
+#获取图像高度和宽度
+height = img.shape[0]
+width = img.shape[1]
+ 
+#创建一幅图像
+grayimg = np.zeros((height, width, 3), np.uint8)
+ 
+#图像平均灰度处理方法
+for i in range(height):
+    for j in range(width):
+        #灰度值为RGB三个分量的平均值
+        gray = (int(img[i,j][0]) + int(img[i,j][1]) + int(img[i,j][2]))  /  3
+        grayimg[i,j] = np.uint8(gray)
+
+cv2.imshow("src", img)
+cv2.imshow("gray", grayimg)
+ 
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+```
+
+图像灰度线性变换
+
+通过建立灰度映射调整原始图像的灰度
+
+![image-20250120222323860](C:\Users\Jamuq\AppData\Roaming\Typora\typora-user-images\image-20250120222323860.png)
+
+Db表示灰度线性变换后的灰度值，Da表示变换前输入图像的灰度值，a/b为f(D)的参数
+
+![image-20250120222435428](C:\Users\Jamuq\AppData\Roaming\Typora\typora-user-images\image-20250120222435428.png)

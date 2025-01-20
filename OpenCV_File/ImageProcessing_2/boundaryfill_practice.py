@@ -1,7 +1,7 @@
 import cv2
 import matplotlib.pyplot as plt
 
-img = cv2.imread('lena.jpg')
+img = cv2.imread('../../Code/lena.jpg')
 print(img.shape)
 # (263, 263, 3)
 
